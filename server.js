@@ -12,6 +12,7 @@ connectDB();
 
 // Routing file './routes/bootcamps.js
 const bootcamps = require('./routes/bootcamps');
+const auth = require('./routes/auth');
 
 const app = express();
 
@@ -25,6 +26,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // Mount router to a specific file in this case './routes/bootcamps.js
 app.use('/api/v1/bootcamps', bootcamps);
+app.use('/api/v1/auth', auth);
 
 app.use(errorHandler);
 
